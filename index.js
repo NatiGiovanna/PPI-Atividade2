@@ -1,9 +1,9 @@
 import PacoteViagem from './Model/Pacote-Viagem.js';
 
-const pacote = new PacoteViagem( 'Salvador', 
-                                '2026-11-25', 
-                                30000, 
-                                'A cidade das Praias mais bonitas',
+const pacote = new PacoteViagem( 'Paris', 
+                                '2029-10-10', 
+                                3000, 
+                                'A torre Eiffel é um dos pontos turísticos mais visitados do mundo.',
                             );
                             
 /*                               
@@ -31,6 +31,10 @@ pacote.alterar().then(() => {
 }).catch((erro) => {
     console.log('Erro ao alterar pacote: ' + erro);
 });
-
 */
 
+pacote.consultar().then((pacotes) => {        
+    for (const pacote of pacotes) {
+        console.log(pacote.toJSON());
+    }
+});
